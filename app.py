@@ -19,6 +19,6 @@ if st.button('Gerar QRcode'):
         btn = st.download_button(
                 label="Baixar QRcode como SVG",
                 data=file,
-                file_name="flower.svg",
+                file_name="qrcode-{link}.svg",
                 mime="image/svg"
             )

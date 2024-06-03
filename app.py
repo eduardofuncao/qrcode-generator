@@ -8,17 +8,17 @@ st.set_page_config(
 )
 
 st.write("# Geração de QRcode")
-link = st.text_input("### Digite o **link do QRcode** abaixo e aperte enter:", "Seu link aqui")
+link = st.text_input("### Digite o **link do QRcode** abaixo e aperte enter:", "seu link aqui")
 
 def generateQRcode(link):
     img = qrcode.make(link, image_factory= qrcode.image.svg.SvgPathFillImage)
-    img.save("qrcode-gerado")
+    img.save("qrcode-gerado.svg")
 
 
 if st.button('Gerar QRcode'):
     generateQRcode(link)
-    st.image('qrcode-gerado', caption=f'qrcode para {link}')
-    with open("qrcode-gerado", "rb") as file:
+    st.image('qrcode-gerado.svg', caption=f'qrcode para "{link}"')
+    with open("qrcode-gerado.svg", "rb") as file:
         btn = st.download_button(
                 label="Baixar QRcode como SVG",
                 data=file,

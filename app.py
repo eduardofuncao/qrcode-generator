@@ -8,7 +8,7 @@ st.set_page_config(
 )
 
 st.write("# Gerador de QRcode")
-link = st.text_input("### Digite o **link do QRcode** abaixo e aperte enter:", "seu link aqui")
+link = st.text_input("### Digite o **link do QRcode** abaixo:", "seu link aqui")
 
 def generateQRcode(link):
     img = qrcode.make(link, image_factory= qrcode.image.svg.SvgPathFillImage)
